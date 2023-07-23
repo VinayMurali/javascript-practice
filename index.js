@@ -154,24 +154,41 @@
 // // Using the greet function with the sayGoodbye callback
 // greet('John', sayGoodbye);
 
-let printFullName = function (hometown, state) {
-  console.log(
-    `${this.firstName}${this.lastName}$from ${hometown} and ${state}`
-  );
-};
+// Call Bind and Apply
+// let printFullName = function (hometown, state) {
+//   console.log(
+//     `${this.firstName}${this.lastName}$from ${hometown} and ${state}`
+//   );
+// };
+// const person = {
+//   firstName: 'Vinay',
+//   lastName: 'Murali',
+// };
+// printFullName.call(person, 'Bangalore', 'karnataka');
+
+// const person2 = {
+//   firstName: 'Ram',
+//   lastName: 'Prasad',
+// };
+
+// printFullName.apply(person2, ['Bangalore', 'karnataka']);
+
+// let exForBind = printFullName.bind(person, 'Bangalore', 'karnataka');
+// console.log('bind', exForBind);
+// exForBind();
+
 const person = {
-  firstName: 'Vinay',
-  lastName: 'Murali',
-};
-printFullName.call(person, 'Bangalore', 'karnataka');
-
-const person2 = {
-  firstName: 'Ram',
-  lastName: 'Prasad',
+  name: 'John',
+  age: 30,
+  occupation: 'Engineer',
 };
 
-printFullName.apply(person2, ['Bangalore', 'karnataka']);
-
-let exForBind = printFullName.bind(person, 'Bangalore', 'karnataka');
-console.log('bind', exForBind);
-exForBind();
+const keys = Object.keys(person);
+const values = Object.values(person);
+const entries = Object.entries(person);
+console.log(`values: ${values}`);
+console.log(`entries: ${entries}`);
+for (let i = 0; i < keys.length; i++) {
+  const property = keys[i];
+  console.log(`${property}: ${person[property]}`);
+}
