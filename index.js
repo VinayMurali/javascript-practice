@@ -87,9 +87,59 @@
 // const sumOfArres6 = (arr) => {
 //   return arr.reduce((sum, current) => sum + current, 0);
 // };
-
 // const result = sumOfArres6([1, 2, 3, 4, 5, 6, 7]);
 // console.log(result);
+
+// Remove duplicate in an array
+
+// const removeDuplicateInArrary = (arr) => {
+//   return [...new Set(arr)];
+// };
+
+// const removeDuplicateInArrary = (arr) => {
+//   let uniqueArray = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (!uniqueArray.includes(arr[i])) {
+//       uniqueArray.push(arr[i]);
+//     }
+//   }
+
+//   return uniqueArray;
+// };
+// const result = removeDuplicateInArrary([1, 2, 2, 1, 3, 3, 4, 5]);
+// console.log('sss', result);
+
+// ~~~~~~~prime number
+// const isPrime = (number) => {
+//   if (number <= 1) {
+//     return false;
+//   }
+
+//   // Iterate from 2 up to the square root of the number
+//   for (let i = 2; i <= Math.sqrt(number); i++) {
+//     if (number % i === 0) {
+//       return false; // Found a factor other than 1 and itself, not prime
+//     }
+//   }
+
+//   return true; // No factors found, number is prime
+// };
+// console.log(isPrime(12));
+// // Fallen array
+// function flattenNestedArray(arr) {
+//   return arr.flat();
+// }
+
+// Example usage:
+// const nestedArray = [1, [2, [3, 4], 5], [6, 7], 8];
+// const flattenedArray = flattenNestedArray(nestedArray);
+// console.log(flattenedArray); // Output: [1, 2, [3, 4], 5, 6, 7, 8]
+
+// // Example usage:
+// console.log(isPrime(7)); // Output: true (7 is a prime number)
+// console.log(isPrime(12)); // Output: false (12 is not a prime number)
+// console.log(isPrime(1)); // Output: false (1 is not a prime number)
+
 // Example for Call back
 // function greet(name, callback) {
 //   console.log(`Hello, ${name}!`);
@@ -103,3 +153,25 @@
 
 // // Using the greet function with the sayGoodbye callback
 // greet('John', sayGoodbye);
+
+let printFullName = function (hometown, state) {
+  console.log(
+    `${this.firstName}${this.lastName}$from ${hometown} and ${state}`
+  );
+};
+const person = {
+  firstName: 'Vinay',
+  lastName: 'Murali',
+};
+printFullName.call(person, 'Bangalore', 'karnataka');
+
+const person2 = {
+  firstName: 'Ram',
+  lastName: 'Prasad',
+};
+
+printFullName.apply(person2, ['Bangalore', 'karnataka']);
+
+let exForBind = printFullName.bind(person, 'Bangalore', 'karnataka');
+console.log('bind', exForBind);
+exForBind();
