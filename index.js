@@ -177,18 +177,33 @@
 // console.log('bind', exForBind);
 // exForBind();
 
-const person = {
-  name: 'John',
-  age: 30,
-  occupation: 'Engineer',
+// const person = {
+//   name: 'John',
+//   age: 30,
+//   occupation: 'Engineer',
+// };
+
+// const keys = Object.keys(person);
+// const values = Object.values(person);
+// const entries = Object.entries(person);
+// console.log(`values: ${values}`);
+// console.log(`entries: ${entries}`);
+// for (let i = 0; i < keys.length; i++) {
+//   const property = keys[i];
+//   console.log(`${property}: ${person[property]}`);
+// }
+
+const getPairs = (arr) => {
+  const pairs = [];
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      pairs.push([arr[i], arr[j]]);
+    }
+  }
+
+  return pairs;
 };
 
-const keys = Object.keys(person);
-const values = Object.values(person);
-const entries = Object.entries(person);
-console.log(`values: ${values}`);
-console.log(`entries: ${entries}`);
-for (let i = 0; i < keys.length; i++) {
-  const property = keys[i];
-  console.log(`${property}: ${person[property]}`);
-}
+const arr = [1, 2, 3];
+const result = getPairs(arr);
+console.log(result);
